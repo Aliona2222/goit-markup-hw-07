@@ -159,16 +159,20 @@ body {
 .mobile-menu-open_icon {
   stroke: rgba(46, 47, 66, 1);
 }
-
 .mobile-menu {
   position: fixed;
-  width: 100%;
-  height: 100%;
-  max-height: 796px;
-  z-index: 1000;
+  z-index: 1;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 24px 24px 40px 40px;
   background-color: #ffffff;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: auto;
 
   opacity: 0;
   visibility: hidden;
@@ -183,27 +187,15 @@ body {
   pointer-events: auto;
 }
 
-.mobile-menu_container {
-  position: relative;
-  padding-top: 80px;
-  padding-bottom: 40px;
-  width: 100%;
-  height: 100%;
-  margin: auto;
-}
-
 .mobile-menu_close-btn {
-  position: absolute;
-  top: 24px;
-  right: 24px;
+  display: block;
+  margin-bottom: 32px;
+  margin-left: auto;
   padding: 0;
   line-height: 0;
   width: 24px;
   height: 24px;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: transparent;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
@@ -214,44 +206,44 @@ body {
 }
 
 .mobile-menu_list {
-  list-style: none;
-  margin: 0 auto;
-  padding-left: 25px;
+}
+
+.mobile-menu_item:not(:last-child) {
+  margin-bottom: 40px;
 }
 
 .mobile-menu_link {
-  display: block;
-  text-decoration: none;
-  font-family: 'Roboto';
-  font-style: normal;
   font-weight: 700;
   font-size: 36px;
   line-height: 1.11;
   letter-spacing: 0.02em;
   text-transform: capitalize;
-  color: #2e2f42;
-  padding-bottom: 40px;
+  color: var(--dark-background-color);
 }
 
 .mobile-menu_link.mobile-menu_color-pressed {
   color: var(--pressed-state-color);
 }
 
-.mobile-menu_link.mobile-menu_color-primary {
+.mobile-menu_contacts_list {
+}
+
+.mobile-menu_tel {
+  display: block;
+  margin: 40px 0;
+
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
   color: var(--primary-brand-color);
 }
 
-.mobile-menu_contacts_list {
-  list-style: none;
-  padding-left: 25px;
-  margin: auto;
-}
-
-.mobile-menu_email-link {
+.mobile-menu_email {
   display: block;
-  text-decoration: none;
-  font-family: 'Roboto';
-  font-style: normal;
+  margin-bottom: 48px;
+
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
@@ -260,12 +252,10 @@ body {
 }
 
 .mobile-menu_social-list {
-  list-style: none;
   display: flex;
-  justify-content: space-between;
-  padding-left: 25px;
-  padding-top: 48px;
-  margin: auto;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 56px;
 }
 
 .mobile-menu_social-item {
@@ -288,7 +278,6 @@ body {
   height: 24px;
   fill: var(--accent-background-color);
 }
-
 /** =========================================== */
 /* --- HERO --- (mobile)*/
 
@@ -638,21 +627,23 @@ body {
 /** =========================================== */
 /* --- TEAM-section --- (mobile)*/
 
-.section-team > .container {
-  width: 264px;
-}
 .section-team {
   background-color: var(--accent-background-color);
 }
 
 .list-team {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   gap: 72px;
-  margin-top: 72px;
+  margin: 72px auto 0;
+  max-width: 264px;
 }
 
 .item-team {
+  width: 100%;
   text-align: center;
   margin: 0 auto;
 
@@ -667,11 +658,11 @@ body {
 }
 
 .section-subtitle {
+  text-align: center;
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
   letter-spacing: 0.02em;
-  text-align: center;
   text-transform: capitalize;
   color: var(--heading-text-color);
 }
@@ -686,8 +677,11 @@ body {
 
 .social-list {
   display: flex;
-  justify-content: center;
-  gap: 24px;
+  justify-content: space-between;
+  align-items: center;
+
+  max-width: 232px;
+  max-height: 40px;
 }
 
 .social-list-item {
@@ -775,10 +769,14 @@ body {
 }
 
 .footer-container {
+  max-width: 398px;
+  width: 100%;
   text-align: center;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   align-items: baseline;
 }
 
@@ -790,7 +788,7 @@ body {
 .footer-description {
   text-align: left;
   color: var(--accent-background-color);
-  margin-top: 16px;
+  margin: 16px auto 0;
 }
 
 .footer-wrap-social {
@@ -800,6 +798,7 @@ body {
 
 .footer-subtitle {
   display: block;
+  margin: 0 auto;
 
   font-weight: 500;
   font-size: 16px;
@@ -835,6 +834,10 @@ body {
 }
 
 .footer-wrap-form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
   text-align: center;
   margin: 0 auto;
 }
@@ -859,7 +862,9 @@ body {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
 
-  width: 398px;
+  width: 100%;
+  max-width: 398px;
+
   height: 40px;
   padding: 8px 16px;
   margin: 16px auto;
@@ -873,8 +878,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
+  margin: 0 auto;
 }
 
 .label-sub input:focus {
@@ -883,12 +888,12 @@ body {
 
 .button-footer {
   display: flex;
-  padding: 8px 24px;
-  margin-left: 0 auto;
-  max-width: 165px;
-  min-height: 40px;
   align-items: center;
   justify-content: center;
+  margin: 0 auto;
+  padding: 8px 24px;
+  max-width: 165px;
+  min-height: 40px;
 
   font-family: 'Roboto';
   font-style: normal;
@@ -1105,17 +1110,14 @@ body {
   /** =========================================== */
   /* --- TEAM-section --- (tablet)*/
 
-  .section-team > .container {
-    width: 552px;
-  }
-
   .list-team {
+    flex-direction: row;
     gap: 64px 24px;
+    max-width: 552px;
   }
 
   .item-team {
-    max-width: calc((100% - 24px) / 2);
-    margin: 0;
+    width: calc((100% - 24px) / 2);
   }
 
   .section-title {
@@ -1164,7 +1166,7 @@ body {
     margin: 0 0 0 93px;
   }
   .form-subscribe-footer input {
-    width: 264px;
+    max-width: 264px;
     margin: 16px 0px 0px;
   }
   .form-field {
@@ -1294,18 +1296,15 @@ body {
   /** =========================================== */
   /* --- TEAM-section --- (desktop)*/
 
-  .section-team > .container {
-    width: 1128px;
-  }
-
   .list-team {
     gap: 24px;
+    max-width: 1128px;
   }
 
   .item-team {
     max-width: calc((100% - 72px) / 4);
-    margin: 0;
   }
+
   /** =========================================== */
   /* --- CUSTOMERS-section --- (desktop)*/
 
@@ -1332,8 +1331,7 @@ body {
   }
 
   .footer-wrap-social {
-    margin: 0;
-    margin-right: 80px;
+    margin: 0 80px 0 0;
   }
 
   .footer-wrap-form {
