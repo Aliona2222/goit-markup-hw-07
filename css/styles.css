@@ -840,6 +840,8 @@ body {
   justify-content: center;
   text-align: center;
   margin: 0 auto;
+
+  width: 100%;
 }
 
 .footer-wrap-form::placeholder {
@@ -1138,9 +1140,6 @@ body {
   }
   /** =========================================== */
   /* --- FOOTER --- (tablet)*/
-  .footer {
-    padding: 96px 0;
-  }
 
   .footer-container {
     text-align: left;
@@ -1162,10 +1161,14 @@ body {
     margin: 0;
   }
   .footer-wrap-form {
+    width: 100%;
+    max-width: 453px;
+
     text-align: left;
     margin: 0 0 0 93px;
   }
   .form-subscribe-footer input {
+    width: 100%;
     max-width: 264px;
     margin: 16px 0px 0px;
   }
@@ -1175,6 +1178,12 @@ body {
     justify-content: flex-start;
     align-items: baseline;
     gap: 0 24px;
+
+    width: 100%;
+  }
+
+  .button-footer {
+    margin: 0;
   }
 }
 
@@ -1323,10 +1332,13 @@ body {
   .footer-container {
     display: flex;
     align-items: baseline;
+    flex-wrap: nowrap;
     margin: 0 auto;
     gap: 0;
   }
+
   .footer-wrap-info {
+    max-width: 453px;
     margin: 0 120px 0 0;
   }
 
