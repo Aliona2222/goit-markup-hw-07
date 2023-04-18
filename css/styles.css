@@ -1214,6 +1214,9 @@ body {
     width: 100%;
   }
 
+  .label-sub {
+    margin-bottom: 0;
+  }
   .button-footer {
     margin: 0;
   }
@@ -1234,7 +1237,7 @@ body {
   /* --- HEADER --- (desktop)*/
   .page-header-container {
     justify-content: space-between;
-    margin: 0 141px;
+    margin: 0 auto;
   }
   .logo {
     margin-right: 76px;
